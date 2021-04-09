@@ -1,0 +1,1098 @@
+/*================================================
+                html,body
+==================================================*/
+html,
+body {
+    height: 100%;
+}
+section {
+    background: #fff;
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-family: "Open Sans", sans-serif;
+}
+
+/*================================================
+                Login page & Forgot Password 
+==================================================*/
+#login,#forgot-password{
+    position: relative;
+    background-image: url(../image/login-bg/login-bg-img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+.logo-img{
+    margin: 0 auto;
+    margin-top: 20%;
+    margin-bottom: 20px;
+    
+}
+.overlay{
+    background-color: rgba(0, 0, 80, 0.6);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.form-container{
+    position: relative;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    padding: 0 50px;
+    margin-bottom: 25px; 
+}
+.form-container h1,h5{
+    text-align: center !important;
+}
+.form-container h1{
+    margin-top: 30px;
+    font-size: 33px;
+    font-weight: 600;
+    line-height: 38px;
+    color: #6255a5;
+}
+.form-container h5{
+    font-size: 14px;
+    margin: 20px 0 25px 0;
+    font-weight: 400;
+    line-height: 19px;
+    color: #333333;
+
+}
+
+label{
+    font-family: "Open Sans",sans-serif;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #333333;
+}
+#exampleInputEmail1,#exampleInputEmail2,#exampleInputEmail3{
+    position: relative;
+    border: 1px solid #6255a5;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    height: 40px;
+}
+.email input{
+    font-family: "Open Sans",sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #000;
+
+}
+#exampleInputPassword1{
+    border: 1px solid #ff5e5e;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    height: 40px;
+    
+}
+.password input{
+    font-family: "Open Sans",sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #8a8a8a;
+
+}
+.password a{    
+    float: right;
+}
+.field-icon{
+    float: right;
+    position: relative;
+    padding-right: 25px;
+    z-index: 2;
+    bottom: 40px;
+    right: 10px;
+    font-size: 17px;
+    color: #d1d1d1;
+    
+}
+#exampleCheck1{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #333333;
+    margin-bottom: 30px;
+}
+.form-check{
+   position: relative;
+   margin: 0;
+   top: 20px;
+}
+.form-check input{
+    position: relative;
+    border: 1px solid #d1d1d1;
+    width: 30px;
+    height: 25px;
+    border-radius: 3px;
+    margin: 0;
+    padding: 0;
+}
+.form-check label{
+    position: relative;
+    left: 40px;
+    bottom: 51px;
+    margin: 0;
+    padding: 0;
+}
+.btn{
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+    background: #6255a5;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 18px;
+    line-height: 22px;
+    height: 40px;
+    border: none;
+    
+}
+.btn:hover{
+    background: #6255a5;
+    color: #fff;
+}
+.bottom-text{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: "Open Sans",sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #333333;
+}
+.bottom-text a{
+    color: #6255a5;
+}
+/*================================================
+                Forgot password
+==================================================*/
+.fp-logo-img{
+    margin: 0 auto;
+    margin-top: 30%;
+    margin-bottom: 5%;
+}
+.fp .btn{
+    font-family: "Open Sans",sans-serif;
+    margin-top: 3%;
+    margin-bottom: 5%;
+    text-transform: uppercase;
+}
+
+
+/*================================================
+                Nav bar
+==================================================*/
+.navbar{
+    padding-top: 10px;
+    padding-left: 100px;
+    transition: all 300ms linear;
+}
+.site-nav-wrapper{
+    padding: 0 85px;
+}
+.navbar-brand img{
+    transform: translateY(-7px);
+}
+.navbar-brand1 img{
+    margin-top: 5px;
+}
+
+.nav > li > a > img{
+    width: 32px;
+    transform: translateY(-5px);
+}
+ul.navbar-nav > li > a{
+    font-family: "Open Sans",sans-serif;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+ul.navbar-nav > li > a:hover,
+ul.navbar-nav > li > a:focus {
+    background: none;
+    
+}
+.nav .btn2{
+    font-family: "Open Sans",sans-serif;
+    background: #fff;
+    color: #6255a5;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+}
+/*White Navigation*/
+.white-nav-top,.nav-notes {
+    background: #fff;
+    padding-top: 10px;
+    padding-left: 100px;
+    transition: all 300ms linear;
+    -webkit-box-shadow: 0 8px 6px -9px #999;
+    box-shadow: 0 8px 6px -9px #999;
+    z-index: 2;
+}
+.white-nav-top ul.navbar-nav > li > a,
+.nav-notes ul.navbar-nav > li > a {
+    color: #212226;
+    font-weight: 700;
+    margin: 0;
+    padding: 15px;
+}
+
+.white-nav-top ul.navbar-nav > li > a:hover,
+.white-nav-top ul.navbar-nav > li > a:focus,
+.nav-notes ul.navbar-nav > li > a:hover,
+.nav-notes ul.navbar-nav > li > a:focus {
+    color: #6255a5;
+}
+.white-nav-top .btn2,
+.nav-notes .btn2{
+    font-family: "Open Sans",sans-serif;
+    color: #fff;
+    border-radius: 3px;
+    background: #6255a5;
+    height: 30px;
+    transform: translateY(-5px);
+}
+
+
+/*================================================
+                pagination
+==================================================*/
+.pagination1{
+    position: relative;
+    right: 70px;
+}
+ul.pagination li a{
+    border: none;
+    color: #333333;
+    font-family: "Open Sans",sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+ul.pagination li a i{
+    width: 8px;
+    height: 15px;
+    color: #333333;
+    font-size: 25px;
+    position: relative;
+    bottom: 3px;
+}
+ul.pagination li a:hover{
+    border: 1px solid #6255a5;
+    border-radius: 50px;
+    background: #6255a5;
+    color: #ffffff;
+    width: 34px;
+    height: 34px;
+    line-height: 20px;
+}
+ul.pagination li a i:hover{
+    border: 1px solid #6255a5;
+    border-radius: 30px;
+    background: #6255a5;
+    color: #ffffff;    
+}
+.pagination>.active>a,.pagination>.active>a:hover{
+    border: 1px solid #6255a5;
+    border-radius: 50px;
+    background: #6255a5;
+    color: #ffffff;
+    width: 34px;
+    height: 34px;
+    line-height: 20px;
+}
+
+/*================================================
+                Dash-board
+==================================================*/
+#dashboard{
+    margin-top: 100px;
+}
+.dashboard-heading h2{
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 38px;
+    color: #6255a5;
+    margin-bottom: 20px;
+}
+.box h4{
+    font-size: 30px;
+    font-weight: 600;
+    color: #6255a5;
+    line-height: 34px;
+}
+.box p{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #333333;
+}
+.box1,.box2,.box3{
+    width: 100%;
+    height: 120px;
+    border: 1px solid #d1d1d1;
+}
+#admin-heading{
+    margin-top: 30px;
+}
+.admin-heading{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.heading-right{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.heading-left h4{
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28px;
+    color: #6255a5;
+    margin-top: 25px;
+}
+.heading-right input{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #8a8a8a;
+    height: 40px;
+    width: 250px;
+    padding-left: 40px;
+    border: 1px solid #d1d1d1;
+}
+.heading-right button{
+    background: #6255a5;
+    color: #fff;
+    height: 40px;
+    font-family: "Open Sans",sans-serif;
+    text-transform: uppercase;
+    border-radius: 3px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+    width: 100px;
+}
+.heading-right img{
+    position: relative;
+    top: 30px;
+    margin-left: 10px;
+}
+.month select{
+    font-family: "Open Sans",sans-serif;
+    position: relative;
+    top: 19px;
+    margin-left: 5px;
+    border-radius: 3px;
+    height: 40px;
+    width: 130px;
+    border-color: #d1d1d1;
+}
+#month option{
+    font-family: "Open Sans",sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #000;    
+}
+
+.table{
+    margin-top: 30px;
+    border: 1px solid #d1d1d1;
+}
+
+.table td,
+.table th{
+    height: 60px;
+    vertical-align: middle !important;
+}
+
+.table tr:hover{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+}
+.all-table{
+    overflow: auto;
+}
+.dashboard-table tr td:nth-child(2){
+    color: #6255a5;
+}
+.dashboard-table tr td:nth-child(9){
+    color: #6255a5;
+    text-align: center;
+}
+
+.user-photo img{
+    width: 36px;
+    height: 36px;
+    margin-top: 8px;
+}
+.dropdown-menu{
+    transform: translateX(-60px); 
+}
+.dropdown-menu .presentation :hover {
+    background: #6255a5;
+    color: #fff;
+}
+.dropdown-menu .purple{
+    color: #6255a5;
+    font-weight: 600;
+}
+.d1 {
+    color: #212226;
+    font-weight: 700;
+    margin: 0;
+    padding: 15px;
+    position: relative;
+    top: 14px;
+}
+.d0{
+    margin-top: 20px;
+    margin-left: 30px;
+    
+}
+/*================================================
+               Footer
+==================================================*/
+footer {
+    background: #fff;
+    padding: 40px;
+    border: 1px solid #8a8a8a;
+}
+
+footer p {
+    font-family: "Open Sans",sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333333;
+    line-height: 18px;
+    margin: 0;
+    margin-top: 10px;
+}
+/*================================================
+                My profile
+==================================================*/
+#admin-profile{
+    margin-top: 100px;
+}
+.profile-heading h2{
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 38px;
+    color: #6255a5;
+    margin-bottom: 20px;
+}
+.firs-name label,.last-name label,.email label,
+.profile-picture label,.category label,.description label,
+.country label,.country-code label,.type label,
+.url label,.phone1 label{
+    font-family: "Open Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #333333; 
+}
+.first-name input,.last-name input,
+.email input,.category input,.country input,
+.country-code input,.type input,.url input,
+.phone1 input{
+    font-family: "Open Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #8a8a8a;
+    width: 100%;
+    height: 40px; 
+}
+.ph{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.phone input{
+    font-family: "Open Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #8a8a8a;
+    width: 80%;
+    height: 40px;     
+}
+.phone select{
+    font-family: "Open Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #8a8a8a;
+    width: 16%;
+    height: 40px; 
+    border-color: #d1d1d1
+}
+.profile-picture input{
+    font-family: "Open Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #8a8a8a;
+    width: 100%;
+    height: 100px; 
+}
+.profile-button{
+    font-family: "Open Sans",sans-serif;
+    background: #6255a5;
+    color: #fff;
+    width: 140px;
+    height: 40px;
+    border-radius: 3px;
+    font-size: 18px;
+    text-transform: uppercase;
+    line-height: 22px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+/*================================================
+                Common headings
+==================================================*/
+#big-heading{
+    margin-top: 100px;
+}
+.big-heading h2{
+    font-size: calc(25px + .8vw);
+    font-weight: 600;
+    line-height: 38px;
+    color: #6255a5;
+    margin-bottom: 20px;    
+}
+.common-heading{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.common-button{
+    font-family: "Open Sans",sans-serif;
+    background: #6255a5;
+    color: #fff;
+    height: 40px;
+    border-radius: 3px;
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 22px;
+    margin-top: 20px;
+}
+.common-left h3{
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 38px;
+    color: #6255a5;
+}
+.common-left h6{
+    font-family: "Open Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #333333;
+}
+#seller{
+    width: 154px;
+    height: 40px;
+    border: 1px solid #d1d1d1;
+}
+#seller option{
+    font-family: "Open Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #333333;    
+}
+.common-right input{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #8a8a8a;
+    height: 40px;
+    width: 250px;
+    padding-left: 40px;
+    border: 1px solid #d1d1d1;
+}
+.common-right button{
+    background: #6255a5;
+    color: #fff;
+    height: 40px;
+    font-family: "Open Sans",sans-serif;
+    text-transform: uppercase;
+    border-radius: 3px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+    width: 100px;
+} 
+.common-right img{
+    position: relative;
+    top: 30px;
+    margin-left: 10px;
+}
+/*================================================
+                Add Category
+==================================================*/
+.description textarea{
+    font-family: "Open Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #8a8a8a;
+    width: 100%;
+    height: 150px;    
+}
+/*================================================
+                Manange type
+==================================================*/
+.type-button{
+    width: 150px;
+}
+/*================================================
+                Notes Details
+==================================================*/
+#note-details{
+    margin-top: 100px;
+}
+.horizontal-heading h3{
+    font-weight: 600;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    color: #6255a5;
+}
+.img-book1 {
+    height: 300px;
+    width: 240px;
+}
+.title h3{
+    font-family: "Open Sans",sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 38px;
+    color: #6255a5;    
+}
+.title :nth-child(2){
+    font-family: "Open Sans",sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26px;
+    color: #333333;
+    margin-bottom: 15px;
+}
+.title :nth-child(3){
+    font-family: "Open Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #333333;    
+}
+.title .btn4{
+    font-family: "Open Sans",sans-serif;
+    background: #6255a5;
+    color: #fff;
+    width: 204px;
+    height: 40px;
+    border-radius: 3px;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+}
+.note-content{
+    display: flex;
+    margin-top: 20px; 
+}
+
+.detail-left p{
+    font-family: "Open Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #333333;    
+}
+.detail-left :nth-child(9){
+    color: #df3434;
+    font-size: 12px;
+    line-height: 18px;
+}
+.detail-right p{
+    font-family: "Open Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #6255a5;    
+}
+
+.line{
+    border-bottom: 2px solid #ccc;
+    display: block;
+    margin: 60px 0;
+}
+#notes-preview{
+    transform: translateY(-60px);
+}
+.detail-right .rate label{
+    font-size: 25px;
+}
+.detail-right .rate{
+    display: flex;
+}
+/*
+   general styles
+*/
+.center-block-horiz {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .set-margin-cicis-menu-to-go {
+    margin: -18px;
+  }
+  .set-padding-cicis-menu-to-go {
+    padding: 20px;
+  }
+ 
+  set-box-shadow-cicis-menu-to-go {
+    -webkit-box-shadow: 4px 4px 14px #4f4f4f;
+    -moz-box-shadow: 4px 4px 14px #4f4f4f;
+    box-shadow: 4px 4px 14px #4f4f4f;
+  }
+  
+  /*
+  ** Style the iframe
+  ** =========================
+  */
+  /*
+      css commmon to all iframes
+  */
+  .responsive-wrapper {
+    position: relative;
+    height: 450px; /* gets height from padding-bottom */
+    overflow: hidden;
+    /* put following styles (necessary for overflow and 
+       scrolling handling) inline in .embed-responsive-element-wrapper around iframe because not stable in CSS
+      -webkit-overflow-scrolling: touch; 
+                        overflow: auto; */
+  }
+  .responsive-wrapper img,
+  .responsive-wrapper object,
+  .responsive-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  
+    border-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /*
+      css particular to this iframe
+  */
+  
+  #Iframe-Cicis-Menu-To-Go {
+    max-width: 666.67px;
+    max-height: 600px;
+    overflow: hidden;
+  }
+  /*
+     padding-bottom = h/w as %
+  */
+  .responsive-wrapper-padding-bottom-90pct {
+    padding-bottom: 90%;
+  }
+.customer-preview{
+    border: 1px solid #d1d1d1;
+    width: 100%;
+    border-radius: 3px;
+    padding: 20px 20px 30px 20px;
+}
+.revr-detail{
+    margin: 0;
+    padding: 0;
+    
+}
+.reviewer img{
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-right: 20px;
+}
+.revr-detail h4{
+    font-size: 18px;
+    font-weight: 600;
+}
+.revr-detail p{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #333333;
+}
+.delete img{
+    float: right;
+}
+.line1 {
+    border-bottom: 1px solid #ccc;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#notes-preview{
+    margin-bottom: 60px;
+}
+.rate {
+    float: left;
+    height: 40px;
+    padding: 0 0px;
+}
+.rate:not(:checked) > input {
+    display: none;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+/*================================================
+                pop-up
+==================================================*/
+.modal-content{
+    padding-left: 40px;
+    padding-right: 55px;
+    padding-bottom: 30px;
+}
+.modal-header h5{
+    color: #6255a5 !important;
+    font-size: 26px !important;
+    font-weight: 600 !important;
+    line-height: 30px !important;
+}
+.modal-header #check-sym{
+    border: 1px solid #6255a5;
+    border-radius: 100%;
+    border-width: 10px;
+    font-size: 35px;
+    color: #fff;
+    background: #6255a5;
+}
+.modal-header .close{
+    font-size: 40px;
+    position: relative;
+    top: -140px;
+    float: right;
+    transform: translateX(50px);
+}
+.modal-header {
+    border-bottom: none;
+    margin-top: 40px;
+}
+.modal-body{
+    margin: 0;
+    padding: 0;
+    margin-top: -40px;
+}
+.modal-body h6{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    color: #333333;
+}
+.modal-body p{
+    font-size: 16px !important;
+    font-weight: 400;
+    line-height: 22px;
+    color: #333333;
+}
+/*================================================
+                members page
+==================================================*/
+#members-page{
+    margin-top: 100px;
+}
+.members-page tr td:nth-child(6){
+    color: #6255a5;
+    text-align: center;
+}
+.members-page tr td:nth-child(7){
+    color: #6255a5;
+    text-align: center;
+}
+.members-page tr td:nth-child(8){
+    color: #6255a5;
+    text-align: center;
+}
+.members-page tr td:nth-child(9){
+    color: #6255a5;
+    text-align: center;
+}
+/*================================================
+                members details
+==================================================*/
+.member-info {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+#member-details p {
+    font-weight: 600;
+}
+
+.member-hr {
+    border-right: 2px solid #d1d1d1;
+}
+
+.member-info-right p{
+    color: #6255a5;
+    font-weight: 400;
+}
+
+/*================================================
+                Spam Reports
+==================================================*/
+.spam-table tr td:nth-child(3){
+    color: #6255a5;
+}
+/*================================================
+                Notes Under Review
+==================================================*/
+.green-button{
+    font-family: "Open Sans",sans-serif;
+    background: #28a745;
+    width: 90px;
+    height: 35px;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+}
+.red-button{
+    font-family: "Open Sans",sans-serif;
+    background: #ff3636;
+    width: 90px;
+    height: 35px;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+}
+.review-button{
+    font-family: "Open Sans",sans-serif;
+    background: #cccccc;
+    width: 90px;
+    height: 35px;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+}
+.review-table tr th:nth-child(8){
+    text-align: center;
+}
+.note-under-search{
+    margin-top: 21px;
+}
+/*================================================
+                Published Notes
+==================================================*/
+.published-table tr td:nth-child(2){
+    color: #6255a5;
+}
+.published-table tr th:nth-child(10){
+    text-align: center;
+}
+.published-table tr td:nth-child(10){
+    text-align: center;
+    color: #6255a5;
+}
+/*================================================
+                Download Notes
+==================================================*/
+.common-left1{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.common-right1{
+    margin-top: 22px;
+}
+.dropdown-left h6{
+    font-family: "Open Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #333333;
+}
+.download-table tr td:nth-child(2){
+    color: #6255a5;
+}
+/*================================================
+                Rejected Notes
+==================================================*/
+.rejected-table tr td:nth-child(2){
+    color: #6255a5;
+}
+.rejected-right{
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
