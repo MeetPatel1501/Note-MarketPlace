@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0 ,user-scalable=no">
+    <title>Notes MarketPlace</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="image//logo/favicon.ico">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Responsive css-->
+    <link rel="stylesheet" href="/css/responsive.css">
+
+</head>
+
+<body>
+
+    <!-- Header-->
+    <header>
+        <nav class="navbar navbar-fixed-top white-nav-top nav-notes">
+            <div class="container-fluid">
+                <div class="site-nav-wrapper">
+                    <div class="navbar-header">
+
+                        <!-- Mobile Menu Open Button -->
+                        <span id="mobile-nav-open-btn">&#9776;</span>
+
+                        <!-- Logo-->
+                        <a href="#user-profile" class="navbar-brand1">
+                            <img src="/image/logo/logo.png" alt="logo" class="img-responsive">
+                        </a>
+                    </div>
+                    <!--Main Menu-->
+                    <div class="container abc">
+                        <div class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav pull-right">
+                                <li><a class="smooth-scroll" href="#" >Dashboard</a></li>
+                                <li>
+                                    
+                                    <div class="dropdown">
+                                        <a class="smooth-scroll d1" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Notes</a>
+                                        <ul class="dropdown-menu d0" role="menu" aria-labelledby="dropdownMenuLink">
+                                            <li class="presentation"><a role="menuitem" tabindex="-1" href="#">Notes Under Review</a></li>
+                                            <li class="presentation"><a role="menuitem" tabindex="-1" href="#">Published Notes</a></li>
+                                            <li class="presentation"><a role="menuitem" tabindex="-1" href="#">Download Notes</a></li>
+                                            <li class="presentation"><a role="menuitem" tabindex="-1" href="#">Rejected Notes</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li><a class="smooth-scroll" href="#">Members</a></li>
+                                <li>
+                                    <div class="dropdown">
+                                        <a class="smooth-scroll d1" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reports</a>
+                                        <ul class="dropdown-menu d0" role="menu" aria-labelledby="dropdownMenuLink">
+                                            <li class="presentation"><a role="menuitem" tabindex="-1" href="#">Spam Reports</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li><a class="smooth-scroll" href="#">Setting</a></li>
+                                <li><div class="dropdown">
+                                        <a class="user-photo" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <img src="/image/navbar/user-img.png">
+                                        </a>
+                                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                            <li class="presentation"><a role="menuitem" tabindex="-1" href="#">Upadte Profile</a></li>
+                                            <li class="presentation"><a role="menuitem" tabindex="-1" href="#">Change Password</a></li>
+                                            <li class="presentation"><a class="purple" role="menuitem" tabindex="-1" href="#">LOGOUT</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li><a class="smooth-scroll" href="#"><button type="submit" href="#"class="btn2 btn-default">Logout</button></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                     <!-- Mobile Menu -->
+                     <div id="mobile-nav">
+                        <!-- Mobile Menu Close Button -->
+                        <span id="mobile-nav-close-btn">&times;</span>
+                        <div id="mobile-nav-content">
+                            <ul class="nav">
+                                <li><a class="smooth-scroll" href="#" >Dashboard</a></li>
+                                <li>
+                                    
+                                    <div class="dropdown">
+                                        <a class="smooth-scroll d1" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Notes</a>
+                                        <ul class="dropdown-menu d0" role="menu" aria-labelledby="dropdownMenuLink">
+                                            <li class="presentation"><a role="menuitem" tabindex="-1" href="#">Notes Under Review</a></li>
+                                            <li class="presentation"><a role="menuitem" tabindex="-1" href="#">Published Notes</a></li>
+                                            <li class="presentation"><a role="menuitem" tabindex="-1" href="#">Download Notes</a></li>
+                                            <li class="presentation"><a role="menuitem" tabindex="-1" href="#">Rejected Notes</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li><a class="smooth-scroll" href="#">Members</a></li>
+                                <li>
+                                    <div class="dropdown">
+                                        <a class="smooth-scroll d1" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reports</a>
+                                        <ul class="dropdown-menu d0" role="menu" aria-labelledby="dropdownMenuLink">
+                                            <li class="presentation"><a role="menuitem" tabindex="-1" href="#">Spam Reports</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li><a class="smooth-scroll" href="#">Setting</a></li>
+                                <li><div class="dropdown">
+                                        <a class="user-photo" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <img src="/image/navbar/user-img.png">
+                                        </a>
+                                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                            <li class="presentation"><a role="menuitem" tabindex="-1" href="#">Upadte Profile</a></li>
+                                            <li class="presentation"><a role="menuitem" tabindex="-1" href="#">Change Password</a></li>
+                                            <li class="presentation"><a class="purple" role="menuitem" tabindex="-1" href="#">LOGOUT</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li><a class="smooth-scroll" href="#"><button type="submit" href="#"class="btn2 btn-default">Logout</button></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="big-heading">
+        <div class="content-box-lg">
+            <div class="container continer-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="big-heading">
+                            <h2>Member Details</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="member-detail">
+        <div class="content-box-lg">
+            <div class="container container-fluid">
+                <div class="row">
+                    <div class="col-md-3 col-sm-12">
+                        <img src="/image/member-details/member.png" alt="member">
+                    </div>
+
+                    <div class="col-md-4 member-info">
+                        <div>
+                            <p>First Name:</p>
+                            <p>Last Name:</p>
+                            <p>Email:</p>
+                            <p>DOB:</p>
+                            <p>Phone number:</p>
+                            <p>College/University:</p>
+                        </div>
+
+                        <div class="member-info-right">
+                            <p>Richard</p>
+                            <p>Brown</p>
+                            <p>richardbrown77@gmail.com</p>
+                            <p>13-08-1990</p>
+                            <p>9988731221</p>
+                            <p>University of California</p>
+                        </div>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-4 member-info"  style="border-left: 1px solid #d1d1d1;">
+                        <div>
+                            <p>Address 1:</p>
+                            <p>Address 2:</p>
+                            <p>City:</p>
+                            <p>State:</p>
+                            <p>Country:</p>
+                            <p>Zip Code:</p>
+                        </div>
+
+                        <div class="member-info-right">
+                            <p>144-Diamond Height</p>
+                            <p>Star Colony</p>
+                            <p>New York</p>
+                            <p>New York State</p>
+                            <p>United State</p>
+                            <p>11004-05</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </section>
+
+    <section id="table">
+        <div class="content-box-lg">
+            <div class="container container-fluid">
+                <div class="row">
+                    <div class="col-md-12 all-table">
+                        <div class="table-heading">
+                            <h4>Notes</h4>
+                        </div>
+                        <table class="table member-table">
+                            <thead>
+                              <tr >
+                                <th scope="col">SR NO.</th>
+                                <th scope="col">NOTE TITLE</th>
+                                <th scope="col">CATEGORY</th>
+                                <th scope="col">STATUS</th>
+                                <th scope="col">DOWNLOADED NOTES</th>
+                                <th scope="col">TOTAL EARNING</th>
+                                <th scope="col">DATE ADDED</th>
+                                <th scope="col">PUBLISHED DATE</th>
+                                <th scope="col"></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="row">1</td>
+                                    <td>Software Development</td>
+                                    <td>IT</td>
+                                    <td>Published</td>
+                                    <td>22</td>
+                                    <td>$177</td>
+                                    <td>09-10-2020, 10:10</td>
+                                    <td>09-10-2020, 10:10</td>
+                                    <td class="two">
+                                        <div class="dropdown">
+                                            <a class="dot-photo" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <img src="/image/dashboard/dots.png">
+                                            </a>
+                                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                                <li class="presentation"><a role="menuitem" tabindex="-1" href="#">Download Notes</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">2</td>
+                                    <td>Computer Basic</td>
+                                    <td>Computer</td>
+                                    <td>Published</td>
+                                    <td>4</td>
+                                    <td>$125</td>
+                                    <td>10-10-2020, 11:25</td>
+                                    <td>10-10-2020, 11:25</td>
+                                    <td class="two">
+                                        <div class="dropdown">
+                                            <a class="dot-photo" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <img src="/image/dashboard/dots.png">
+                                            </a>
+                                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                                <li class="presentation"><a role="menuitem" tabindex="-1" href="#">Download Notes</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">3</td>
+                                    <td>Human Body</td>
+                                    <td>Science</td>
+                                    <td>InReview</td>
+                                    <td>17</td>
+                                    <td>$978</td>
+                                    <td>11-10-2020, 01:00</td>
+                                    <td>11-10-2020, 01:00</td>
+                                    <td class="two">
+                                        <div class="dropdown">
+                                            <a class="dot-photo" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <img src="/image/dashboard/dots.png">
+                                            </a>
+                                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                                <li class="presentation"><a role="menuitem" tabindex="-1" href="#">Download Notes</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">4</td>
+                                    <td>World War 2</td>
+                                    <td>History</td>
+                                    <td>Published</td>
+                                    <td>28</td>
+                                    <td>$15254</td>
+                                    <td>12-10-2020, 10:10</td>
+                                    <td>12-10-2020, 10:10</td>
+                                    <td class="two">
+                                        <div class="dropdown">
+                                            <a class="dot-photo" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <img src="/image/dashboard/dots.png">
+                                            </a>
+                                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                                <li class="presentation"><a role="menuitem" tabindex="-1" href="#">Download Notes</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">5</td>
+                                    <td>Accounting</td>
+                                    <td>Account</td>
+                                    <td>Published</td>
+                                    <td>0</td>
+                                    <td>$69</td>
+                                    <td>13-10-2020, NA</td>
+                                    <td>13-10-2020, NA</td>
+                                    <td class="two">
+                                        <div class="dropdown">
+                                            <a class="dot-photo" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <img src="/image/dashboard/dots.png">
+                                            </a>
+                                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                                <li class="presentation"><a role="menuitem" tabindex="-1" href="#">Download Notes</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="pagination">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="pagination1 text-center">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                              <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1 aria-label="Previous">
+                                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                                    </a>
+                              </li>
+                              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                              <li class="page-item"><a class="page-link" href="#">2</a></li>
+                              <li class="page-item"><a class="page-link" href="#">3</a></li>
+                              <li class="page-item"><a class="page-link" href="#">4</a></li>
+                              <li class="page-item"><a class="page-link" href="#">5</a></li>
+                              <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <i class="fa fa-angle-right " aria-hidden="true"></i>
+                                    </a>
+                              </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>
+                        Version: 1.1.24
+                    </p>
+                </div>
+                <div class="col-md-6" class="text-right">
+                    <p>
+                        Copyright &copy; TatvaSoft All rights reserved. <span>SOLO Inc.</span>
+                    </p>    
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- Popper -->
+    <script src="js/popper/popper.min.js"></script>
+
+    <!-- Custom jquery -->
+    <script src="js/jquery.min.js"></script>
+
+    <!-- bootstrap -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+
+    <!-- custom js -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
