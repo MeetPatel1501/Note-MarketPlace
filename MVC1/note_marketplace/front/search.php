@@ -1,3 +1,8 @@
+<?php 
+    session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,13 +33,12 @@
 <body>
 
     <!-- Header-->
-    <?php
-        if (isset($_SESSION['email'])) {
+    <?php 
 
+        if(isset($_SESSION['email']))
+        {
             include 'header2.php';
-
-        } else {
-            
+        }else{
             include 'header1.php';
         }
     ?>

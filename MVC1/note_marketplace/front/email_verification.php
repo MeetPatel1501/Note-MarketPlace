@@ -1,5 +1,6 @@
 <?php 
     include 'config.php';
+    session_start();
 
     $id = $_GET['ID'];
     $id = mysqli_real_escape_string($conn, $id);
@@ -12,7 +13,7 @@
     if(isset($_POST['submit1']))
     {
 
-        $query = "UPDATE users SET is_email_verified=1 WHERE ID=$id";
+        $query = "UPDATE users SET is_email_verified=1 WHERE id=$id";
         $uquery = mysqli_query($conn, $query);
 
         if($uquery)
