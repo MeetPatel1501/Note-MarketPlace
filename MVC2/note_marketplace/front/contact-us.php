@@ -1,4 +1,7 @@
 <?php
+ 
+session_start();
+
 
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;

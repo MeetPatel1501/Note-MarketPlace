@@ -1,3 +1,51 @@
+<?php 
+    session_start();
+
+    include "config.php";
+    $limit = 5;
+
+    if (isset($_GET["page"])) {
+        $page  = $_GET["page"];
+    } else {
+        $page = 1;
+    };
+    $start_from = ($page - 1) * $limit;
+    if (isset($_POST['search_1'])) {
+
+        $search_result = $_POST['search'];
+
+        $query = "SELECT seller_notes.id,seller_notes.modified_date,seller_notes.title,
+                note_categories.name,reference_data.value FROM seller_notes LEFT JOIN 
+                note_categories ON seller_notes.category=note_categories.id LEFT JOIN reference_data 
+                ON seller_notes.status=reference_data.id WHERE seller_notes.title LIKE '%$search_result%' 
+                AND seller_notes.is_active=1 AND reference_data.id IN (3,4,5) 
+                ORDER BY seller_notes.modified_date DESC LIMIT $start_from, $limit";
+
+        $result = mysqli_query($conn, $query);
+
+        $result_num = mysqli_query($conn, "SELECT COUNT(id) FROM seller_notes WHERE title LIKE '%$search_result%' AND seller_notes.is_active=1 AND status IN (3,4,5)");
+        $row = mysqli_fetch_row($result_num);
+        $total_records = $row[0];
+        $total_pages = ceil($total_records / $limit);
+    } else {
+
+        $query = "SELECT seller_notes.id,seller_notes.modified_date,seller_notes.title,note_categories.name,
+                reference_data.value FROM seller_notes LEFT JOIN note_categories ON 
+                seller_notes.category=note_categories.id LEFT JOIN reference_data 
+                ON seller_notes.status=reference_data.id WHERE reference_data.id IN (3,4,5) 
+                AND seller_notes.is_active=1 ORDER BY seller_notes.modified_date DESC LIMIT $start_from, $limit";
+
+        $result = mysqli_query($conn, $query);
+
+        $result_num = mysqli_query($conn, "SELECT COUNT(id) FROM seller_notes WHERE status IN (3,4,5) AND seller_notes.is_active=1");
+        $row = mysqli_fetch_row($result_num);
+        $total_records = $row[0];
+        $total_pages = ceil($total_records / $limit);
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -120,58 +168,42 @@
                 <div class="row">
                     <div class="col-md-12">
                         <table class="table">
-                            <thead>
+                            
                               <tr >
                                 <th scope="col">ADDED DATE</th>
                                 <th scope="col">TITLE</th>
                                 <th scope="col">CATEGORY</th>
                                 <th scope="col">STATUS</th>
-                                <th scope="col">ACTIONS</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td scope="row">09-10-2020</td>
-                                <td class="align-middle">Data Science</td>
-                                <td>Science</td>
-                                <td>Draft</td>
-                                <td>
-                                    <img src="image/dashboard/edit.png">
-                                    <img src="image/dashboard/delete.png">
-                                </td>
-                              </tr>
-                              <tr>
-                                <td scope="row">10-10-2020</td>
-                                <td>Accounts</td>
-                                <td>Commerce</td>
-                                <td>In Review</td>
-                                <td><img src="image/dashboard/eye.png"></td>
-                              </tr>
-                              <tr>
-                                <td scope="row">11-10-2020</td>
-                                <td>Social Studies</td>
-                                <td>Social</td>
-                                <td>Submitted</td>
-                                <td><img src="image/dashboard/eye.png"></td>
-                              </tr>
-                              <tr>
-                                <td scope="row">12-10-2020</td>
-                                <td>AI</td>
-                                <td>IT</td>
-                                <td>Submitted</td>
-                                <td><img src="image/dashboard/eye.png"></td>
-                              </tr>
-                              <tr>
-                                <td scope="row">13-10-2020</td>
-                                <td>Lorem ipsum dolor sit ametsectetur</td>
-                                <td>Lorem</td>
-                                <td>Draft</td>
-                                <td>
-                                    <img src="image/dashboard/edit.png">
-                                    <img src="image/dashboard/delete.png">
-                                </td>
-                              </tr>
-                            </tbody>
+                                <?php
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        $date = $row['modifie_ddate'];
+                                        $title = $row['title'];
+                                        $category_name = $row['name'];
+                                        $refe_data = $row['value'];
+                                        $noteid = $row['id'];
+                                        echo "<tr>
+                                        <td>$date</td>
+                                        <td>$title</td>
+                                        <td>$category_name</td>
+                                        <td>$refe_data</td>";
+                                        if ($refe_data == 'Draft') {
+                                                echo " <td>
+                                                <a href='delete_draft.php?id=$noteid'>
+                                                <img src='image/dashboard/delete.png' title='Click to delete' alt='Delete'></a>
+                                                <a href='add-note.php?id=$noteid'>
+                                                <img src='image/dashboard/edit.png' title='Click to Edit' alt='edit'></a>
+                                            </td>
+                                        </tr>";
+                                        } else {
+                                            echo " <td>
+                                                <a href='note-details.php'>
+                                                <img src='images/dashboard/eye.png' title='Click to View' alt='View'>
+                                                </a>
+                                            </td>
+                                        </tr>";
+                                        }
+                                    }
+                                ?>
                         </table>
                     </div>
                 </div>
@@ -186,21 +218,17 @@
                     <div class="pagination1 text-center">
                         <nav aria-label="Page navigation example">
                             <ul class="pagination">
-                              <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1 aria-label="Previous">
-                                        <i class="fa fa-angle-left" aria-hidden="true"></i>
-                                    </a>
-                              </li>
-                              <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                              <li class="page-item"><a class="page-link" href="#">2</a></li>
-                              <li class="page-item"><a class="page-link" href="#">3</a></li>
-                              <li class="page-item"><a class="page-link" href="#">4</a></li>
-                              <li class="page-item"><a class="page-link" href="#">5</a></li>
-                              <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                        <i class="fa fa-angle-right " aria-hidden="true"></i>
-                                    </a>
-                              </li>
+                                <?php
+                                    echo "<li class='page-item'><a class='page-link' href='dashboard.php?page=" . ($page - 1)
+                                        . "'>❮</a></li>";
+                                    for ($i = 1; $i <= $total_pages; $i++) {
+                                        if ($i == $page) {
+                                            echo "<li class='page-item active'><a class='page-link' href='dashboard.php?page=$i'>$i</a></li>";
+                                        } else echo "<li class='page-item'><a class='page-link' href='dashboard.php?page=$i'>$i</a></li>";
+                                    }
+                                    echo "<li class='page-item'><a class='page-link' href='dashboard.php?page=" . ($page + 1)
+                                        . "'>❯</a></li>";
+                                ?>
                             </ul>
                         </nav>
                     </div>
@@ -226,6 +254,47 @@
                         </div>
                     </div>
                 </div>
+                <?php
+                    if (isset($_GET["page_info"])) {
+                        $page_info  = $_GET["page_info"];
+                    } else {
+                        $page_info = 1;
+                    };
+                    $start_from2 = ($page_info - 1) * $limit;
+
+                    if (isset($_POST['search_2'])) {
+
+                        $search_result2 = $_POST['search_result2'];
+
+                        $query2 = "SELECT seller_notes.published_date,seller_notes.title,note_categories.name,
+                                    reference_data.value,seller_notes.selling_price FROM seller_notes LEFT JOIN 
+                                    note_categories ON seller_notes.category=note_categories.id LEFT JOIN
+                                    reference_data ON seller_notes.is_paid=reference_data.id WHERE 
+                                    seller_notes.title LIKE '%$search_result2%' AND seller_notes.status=6 
+                                    ORDER BY seller_notes.modified_date DESC LIMIT $start_from2, $limit";
+
+                        $result2 = mysqli_query($conn, $query2);
+
+                        $result_num2 = mysqli_query($conn, "SELECT COUNT(id) FROM seller_notes WHERE title LIKE '%$search_result2%' AND status=6");
+                        $row2 = mysqli_fetch_row($result_num2);
+                        $total_records2 = $row2[0];
+                        $total_pages2 = ceil($total_records2 / $limit);
+                    } else {
+                        $query2 = "SELECT seller_notes.published_date,seller_notes.title,note_categories.name,
+                                    reference_data.value,seller_notes.selling_price FROM seller_notes LEFT JOIN 
+                                    note_categories ON seller_notes.category=note_categories.id LEFT JOIN
+                                    reference_data ON seller_notes.is_paid=reference_data.id WHERE 
+                                    seller_notes.status=6 ORDER BY seller_notes.modified_date DESC LIMIT $start_from2, $limit";
+
+                        $result2 = mysqli_query($conn, $query2);
+
+                        $result_num2 = mysqli_query($con, "SELECT COUNT(id) FROM seller_notes WHERE status=6");
+                        $row2 = mysqli_fetch_row($result_num2);
+                        $total_records2 = $row2[0];
+                        $total_pages2 = ceil($total_records2 / $limit);
+                    }
+
+                ?>
                 <div class="row">
                     <div class="col-md-12">
                         <table class="table">
@@ -239,52 +308,23 @@
                                 <th scope="col">ACTIONS</th>
                               </tr>
                             </thead>
-                            <tbody>
-                              <tr>
-                                <td scope="row">09-10-2020</td>
-                                <td>Data Science</td>
-                                <td>Science</td>
-                                <td>Paid</td>
-                                <td>$575</td>
-                                <td>
-                                    <img src="image/dashboard/eye.png">
-                                </td>
-                              </tr>
-                              <tr>
-                                <td scope="row">10-10-2020</td>
-                                <td>Accounts</td>
-                                <td>Commerce</td>
-                                <td>Free</td>
-                                <td>$0</td>
-                                <td><img src="image/dashboard/eye.png"></td>
-                              </tr>
-                              <tr>
-                                <td scope="row">11-10-2020</td>
-                                <td>Social Studies</td>
-                                <td>Social</td>
-                                <td>Free</td>
-                                <td>$0</td>
-                                <td><img src="image/dashboard/eye.png"></td>
-                              </tr>
-                              <tr>
-                                <td scope="row">12-10-2020</td>
-                                <td>AI</td>
-                                <td>IT</td>
-                                <td>Paid</td>
-                                <td>$3542</td>
-                                <td><img src="image/dashboard/eye.png"></td>
-                              </tr>
-                              <tr>
-                                <td scope="row">13-10-2020</td>
-                                <td>Lorem ipsum dolor sit ametsectetur</td>
-                                <td>Lorem</td>
-                                <td>Free</td>
-                                <td>$0</td>
-                                <td>
-                                    <img src="image/dashboard/eye.png">
-                                </td>
-                              </tr>
-                            </tbody>
+                            <?php
+                                while ($row = mysqli_fetch_assoc($result2)) {
+                                    $date2 = $row['published_date'];
+                                    $title2 = $row['title'];
+                                    $category_name2 = $row['name'];
+                                    $refe_data2 = $row['value'];
+                                    $sell_price = $row['selling_price'];
+                                    echo "<tr>
+                                        <td>$date2</td>
+                                        <td>$title2</td>
+                                        <td>$category_name2</td>
+                                        <td>$refe_data2</td> 
+                                        <td>$sell_price</td>
+                                        <td> <a href='note-details.php'><img src='images/dashboard/eye.png' title='Click to View' alt='View'></a> </td>
+                                         </tr>";
+                                }
+                            ?>
                         </table>
                     </div>
                 </div>
@@ -299,21 +339,17 @@
                     <div class="pagination1 text-center">
                         <nav aria-label="Page navigation example">
                             <ul class="pagination">
-                              <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1 aria-label="Previous">
-                                        <i class="fa fa-angle-left" aria-hidden="true"></i>
-                                    </a>
-                              </li>
-                              <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                              <li class="page-item"><a class="page-link" href="#">2</a></li>
-                              <li class="page-item"><a class="page-link" href="#">3</a></li>
-                              <li class="page-item"><a class="page-link" href="#">4</a></li>
-                              <li class="page-item"><a class="page-link" href="#">5</a></li>
-                              <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                        <i class="fa fa-angle-right " aria-hidden="true"></i>
-                                    </a>
-                              </li>
+                            <?php
+                                echo "<li class='page-item'><a class='page-link' href='dashboard.php?page_info=" . ($page_info - 1)
+                                    . "'>❮</a></li>";
+                                for ($i = 1; $i <= $total_pages2; $i++) {
+                                    if ($i == $page_info) {
+                                        echo "<li class='page-item active'><a class='page-link' href='dashboard.php?page_info=$i'>$i</a></li>";
+                                    } else echo "<li class='page-item'><a class='page-link' href='dashboard.php?page_info=$i'>$i</a></li>";
+                                }
+                                echo "<li class='page-item'><a class='page-link' href='dashboard.php?page_info=" . ($page + 1)
+                                    . "'>❯</a></li>";
+                            ?>
                             </ul>
                         </nav>
                     </div>
